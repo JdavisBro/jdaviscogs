@@ -3,7 +3,7 @@ import time
 import random
 from discord.ext import commands
 
-class jroll(commands.Cog):
+class jroll:
     """Jdavis Roll"""
    
     def __init__(self, bot):
