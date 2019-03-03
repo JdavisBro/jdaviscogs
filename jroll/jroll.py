@@ -1,7 +1,8 @@
 import discord
 import time
 import random
-from discord.ext import commands
+import redbot
+from redbot.core import commands
 
 class jroll:
     ""Jdavis Roll Command""
