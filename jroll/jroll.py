@@ -1,15 +1,12 @@
 import discord
 import time
 import random
-from discord.ext import commands
+from redbot.core import commands
 
-class jroll:
+class jroll(commands.Cog):
     ""Jdavis Roll Command""
 
-    def __init__(self, bot)
-        self.bot = bot
-
-@commands.command(pass_context=True)
+@commands.command()
 async def jroll(self,ctx):
     ""tHIS ROLLS""
     stop= random.randint(1,5)
