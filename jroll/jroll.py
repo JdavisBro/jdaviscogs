@@ -4,15 +4,12 @@ import random
 import redbot
 from redbot.core import commands
 
-class jroll:
-    ""Jdavis Roll Command""
-
-    def __init__(self, bot)
-        self.bot = bot
+class jroll(commands.Cog):
+    """Jdavis Roll Command"""
 
 @commands.command(pass_context=True)
-async def jroll(self,ctx):
-    ""tHIS ROLLS""
+async def jroll(self, ctx):
+    """tHIS ROLLS"""
     stop= random.randint(1,5)
     await commands.say(stop)
     message= await commands.say("Rolling\n  1\n  2\n>3\n  4\n  5\nRolling")
