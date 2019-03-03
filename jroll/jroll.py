@@ -8,7 +8,7 @@ class jroll(commands.Cog):
 
 @commands.command()
 async def jroll(self,ctx):
-    ""tHIS ROLLS""
+    """tHIS ROLLS"""
     stop= random.randint(1,5)
     await commands.say(stop)
     message= await commands.say("Rolling\n  1\n  2\n>3\n  4\n  5\nRolling")
