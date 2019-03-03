@@ -5,6 +5,9 @@ from discord.ext import commands
 
 class jroll(commands.Cog):
     """Jdavis Roll"""
+   
+    def __init__(self, bot):
+        self.bot = bot
 
 @commands.command()
 async def jroll(self,ctx):
