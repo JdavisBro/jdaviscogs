@@ -70,6 +70,3 @@ async def jroll(self,ctx):
         await commands.edit_message(message,new_content=str("Rolling\n  2\n  3\n>4\n  5\n  1\nRolling"))
         time.sleep(0.9)
         await commands.edit_message(message,new_content=str("Rolling\n  3\n  4\n>5\n  1\n  2\nRolling"))
-
-def setup(bot):
-    bot.add_cog(jroll(bot))
