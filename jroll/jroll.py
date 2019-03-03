@@ -4,7 +4,7 @@ import random
 from redbot.core import commands
 
 class jroll(commands.Cog):
-    ""Jdavis Roll Command""
+    """Jdavis Roll"""
 
 @commands.command()
 async def jroll(self,ctx):
