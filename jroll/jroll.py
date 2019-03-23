@@ -1,8 +1,7 @@
 import discord
 import time
 import random
-import redbot
-from redbot.core import commands
+from descord.ext import commands
 
 commands=self.bot
 
