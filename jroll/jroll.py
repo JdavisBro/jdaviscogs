@@ -4,6 +4,8 @@ import random
 import redbot
 from redbot.core import commands
 
+commands=self.bot
+
 class jroll(commands.Cog):
     """Jdavis Roll Command"""
 
