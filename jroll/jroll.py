@@ -1,7 +1,7 @@
 import discord
 import time
 import random
-from descord.ext import commands
+from discord.ext import commands
 
 commands=self.bot
 
