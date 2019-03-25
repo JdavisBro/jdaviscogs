@@ -8,7 +8,7 @@ class owocog:
         self.bot = bot
 
     @commands.command()
-    async def owo(self):
+    async def owo(self,*,pasta):
         """OwO!"""
         oldchar = "L"
         newchar = "W"
