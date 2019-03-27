@@ -15,7 +15,7 @@ class gay:
         await self.bot.send_typing(ctx.message.channel)
         sleepfor=random.randint(1,10)
         time.sleep(sleepfor)
-        await self.bot.say("{} is Gay".format(ctx.message.author.nick))
+        await self.bot.say("{} is Gay".format(ctx.message.author.display_name))
 
 def setup(bot):
     bot.add_cog(gay(bot))
