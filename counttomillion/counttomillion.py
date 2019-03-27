@@ -6,12 +6,6 @@ json="data/counttomillion/count.json"
 fileW=open(json, 'w')
 fileR=open(json, 'r')
 
-if fileR.read()!='':
-    print("Creating count.json file in data/counttomillion/")
-    open(json,'w+').write("{}")
-else:
-    print("file already exists continuing.")
-
 data=json.load(fileR)
 
 class counttomillion:
@@ -60,3 +54,8 @@ class counttomillion:
 
 def setup(bot):
     bot.add_cog(counttomillion(bot))
+    if fileR.read()!='':
+        print("Creating count.json file in data/counttomillion/")
+        open(json,'w+').write("{}")
+    else:
+        print("file already exists continuing.")
