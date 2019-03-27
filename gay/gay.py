@@ -9,7 +9,7 @@ class gay:
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command()
+    @commands.command(pass_context=True)
     async def gay(self,ctx):
         """GAY!"""
         await self.bot.send_typing(ctx.message.channel)
