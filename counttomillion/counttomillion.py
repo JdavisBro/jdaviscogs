@@ -3,7 +3,7 @@ from discord.ext import commands
 import json
 
 json="data/counttomillion/count.json"
-fileA=open(json, 'a')
+fileW=open(json, 'w')
 fileR=open(json, 'r')
 
 if fileR.read()!='':
@@ -33,20 +33,6 @@ class counttomillion:
             else:
                 await self.bot.say("A count is already running in this channel!")
 
-    @commands.event
-    async def on_message(message):
-        if [message.channel.id]!=0
-            try:
-                if int(message.content)==data[message.channel.id]:
-                    data[message.channel.id]+1
-                    await self.bot.edit_channel(ctx.message.channel,topic="Next number: {}".format(data[message.channel.id]))
-                    json.dump(data, fp, sort_keys=True, indent=4)
-            except:
-                try:
-                    await self.bot.delete_message(message)
-                except:
-                    pass
-
     @commands.command(pass_context=True)
     async def stopcount(self,ctx):
         if ctx.message.author.server_permissions.manage_server:
@@ -56,6 +42,21 @@ class counttomillion:
                 await self.bot.say("Ok, stopped! We got to {} before stopping!".format(data[ctx.message.channel.id]))
                 data[ctx.message.channel.id]=0
                 await self.bot.edit_channel(ctx.message.channel,topic="")
+
+    @commands.event
+    async def on_message(message):
+        if [message.channel.id]!=0
+            try:
+                content=int(message.content)
+                if content==data[message.channel.id]:
+                    data[message.channel.id]+1
+                    await self.bot.edit_channel(ctx.message.channel,topic="Next number: {}".format(data[message.channel.id]))
+                    json.dump(data, fileW, sort_keys=True, indent=4
+            except:
+                try:
+                    await self.bot.delete_message(message)
+                except:
+                    pass
 
 def setup(bot):
     bot.add_cog(counttomillion(bot))
