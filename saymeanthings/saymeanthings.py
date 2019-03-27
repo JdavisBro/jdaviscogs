@@ -16,7 +16,7 @@ class saymeanthings:
         await self.bot.send_typing(ctx.message.channel)
         sleepfor=random.randint(2,6)
         time.sleep(sleepfor)
-        await self.bot.say("WOW IM LITERALLY CRYING AND SHAKING I CAN'T BELIEVE {} SAID `{}` TO ME 😢 😰".format(ctx.message.author.display_name,mean_thing))
+        await self.bot.say("WOW IM LITERALLY CRYING AND SHAKING I CAN'T BELIEVE {} SAID `{}` TO ME 😢 😰".format(ctx.message.author.mention,mean_thing))
 
 def setup(bot):
     bot.add_cog(saymeanthings(bot))
