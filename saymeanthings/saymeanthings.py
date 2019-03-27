@@ -12,7 +12,7 @@ class saymeanthings:
     @commands.command(pass_context=True)
     async def meanthing(self,ctx,*,mean_thing):
         """Mean!"""
-        time.sleep(2)
+        time.sleep(1)
         await self.bot.send_typing(ctx.message.channel)
         sleepfor=random.randint(2,6)
         time.sleep(sleepfor)
