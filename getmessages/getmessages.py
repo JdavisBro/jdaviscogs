@@ -8,6 +8,18 @@ class getmessages:
     def __init__(self, bot):
         self.bot = bot
 
+    async def message():
+        async for message in client.logs_from(channel):
+            if contains in message.content:
+                server+=1
+                if message.author==ctx.message.author:
+                    person+=1
+
+    async def channel():
+        async for channel in ctx.message.server.channels:
+            yield channel
+            asyncio.run(message())
+
     @commands.command(pass_context=True)
     async def getmessages(self,ctx,*,contains):
         """Get messages!"""
@@ -22,18 +34,6 @@ class getmessages:
         else:
             percent=person/server*100
             await self.bot.say("You have said {} {} times out of the server's {} times! That makes {}%".format(contains,person,server,percent))
-
-async def message():
-    async for message in client.logs_from(channel):
-        if contains in message.content:
-            server+=1
-            if message.author==ctx.message.author:
-                person+=1
-
-async def channel():
-    async for channel in ctx.message.server.channels:
-        yield channel
-        asyncio.run(message())
 
 def setup(bot):
     bot.add_cog(getmessages(bot))
