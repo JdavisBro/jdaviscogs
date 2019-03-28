@@ -10,19 +10,17 @@ class getmessages:
     @commands.command(pass_context=True)
     async def getmessages(self,ctx,*,contains):
         """Get messages!"""
-        person=int(0)
-        server=int(0)
-        percent=int(0)
-        contains=str(contains)
+        person=0
+        server=0
+        percent=0
         await self.bot.say("Checking server for {} by you!".format(contains))
         await self.bot.send_typing(ctx.message.channel)
         for channel in ctx.message.server.channels:
-            channel=yield channel
-            for message in self.bot.logs_from(channel,limit=100000):
+            for message in self.bot.logs_from(channel):
                 if contains in message.content:
-                    server=server+1
+                    server+=1
                     if message.author==ctx.message.author:
-                        person=person+1
+                        person+=1
         percent=person/server*100
         await self.bot.say("You have said {} {} times out of the server's {} times! That makes {}%".format(contains,person,server,percent))
 
