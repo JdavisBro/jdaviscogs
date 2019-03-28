@@ -1,7 +1,5 @@
 import discord
 from discord.ext import commands
-import time
-import random
 
 class getmessages:
     """getmessages!"""
@@ -12,8 +10,8 @@ class getmessages:
     @commands.command(pass_context=True)
     async def getmessages(self,ctx,*,contains):
         """Get messages!"""
-        person=0
-        server=0
+        person=int(0)
+        server=int(0)
         await self.bot.say("Checking server for {} by you!".format(contains))
         await self.bot.send_typing(ctx.message.channel)
         for channel in ctx.message.server.channels:
