@@ -16,7 +16,8 @@ class getmessages:
         await self.bot.say("Checking server for {} by you!".format(contains))
         await self.bot.send_typing(ctx.message.channel)
         for channel in ctx.message.server.channels:
-            for message in self.bot.logs_from(channel):
+            logs= await self.bot.logs_from(channel)
+            for message in logs:
                 if contains in message.content:
                     server+=1
                     if message.author==ctx.message.author:
