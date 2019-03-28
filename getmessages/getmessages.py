@@ -17,7 +17,7 @@ class getmessages:
         await self.bot.send_typing(ctx.message.channel)
             for channel in ctx.message.server.channels:
                 async def get_logs_from(channel):
-                    await for m in client.logs_from(channel):
+                    for m in client.logs_from(channel):
                         if contains in message.content:
                             server+=1
                             if message.author==ctx.message.author:
