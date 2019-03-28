@@ -16,12 +16,12 @@ class getmessages:
         await self.bot.say("Checking server for {} by you!".format(contains))
         await self.bot.send_typing(ctx.message.channel)
         for channel in ctx.message.server.channels:
-            logs= await self.bot.logs_from(channel)
-            for message in logs:
-                if contains in message.content:
-                    server+=1
-                    if message.author==ctx.message.author:
-                        person+=1
+            async def get_logs_from(channel):
+                async for m in client.logs_from(channel):
+                    if contains in message.content:
+                        server+=1
+                        if message.author==ctx.message.author:
+                            person+=1
         percent=person/server*100
         await self.bot.say("You have said {} {} times out of the server's {} times! That makes {}%".format(contains,person,server,percent))
 
