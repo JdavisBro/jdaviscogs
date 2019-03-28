@@ -15,8 +15,8 @@ class getmessages:
         percent=0
         await self.bot.say("Checking server for {} by you!".format(contains))
         await self.bot.send_typing(ctx.message.channel)
-        async def get_logs_from(channel):
             for channel in ctx.message.server.channels:
+                async def get_logs_from(channel):
                     await for m in client.logs_from(channel):
                         if contains in message.content:
                             server+=1
