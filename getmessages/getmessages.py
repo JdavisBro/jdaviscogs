@@ -22,8 +22,8 @@ class getmessages:
                         server+=1
                         if message.author==ctx.message.author:
                             person+=1
-        percent=person/server*100
-        await self.bot.say("You have said {} {} times out of the server's {} times! That makes {}%".format(contains,person,server,percent))
+            percent=person/server*100
+            await self.bot.say("You have said {} {} times out of the server's {} times! That makes {}%".format(contains,person,server,percent))
 
 
 def setup(bot):
