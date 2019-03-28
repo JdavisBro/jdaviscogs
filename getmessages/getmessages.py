@@ -12,13 +12,13 @@ class getmessages:
         """Get messages!"""
         person=int(0)
         server=int(0)
+        percent=int(0)
         contains=str(contains)
         await self.bot.say("Checking server for {} by you!".format(contains))
         await self.bot.send_typing(ctx.message.channel)
         for channel in ctx.message.server.channels:
             channel=yield channel
-            logs=await self.bot.logs_from(channel,limit=100000)
-            for message in logs:
+            for message in self.bot.logs_from(channel,limit=100000):
                 if contains in message.content:
                     server=server+1
                     if message.author==ctx.message.author:
