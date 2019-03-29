@@ -16,7 +16,7 @@ class getmessages:
         percent=0
         await self.bot.say("Checking server for {} by you!".format(contains))
         await self.bot.send_typing(ctx.message.channel)
-        for channel in ctx.message.server.channels
+        await for channel in ctx.message.server.channels
             async for message in client.logs_from(channel):
                 if contains in message.content:
                     server += 1
