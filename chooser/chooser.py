@@ -6,9 +6,9 @@ path="data/chooser/people.json"
 fileW=open(path, 'w')
 fileR=open(path, 'r')
 filecontents=fileR.read()
+fileR.close()
 last=0
 data=json.loads(filecontents)
-fileR.flush()
 
 class chooser:
     """Chooser!"""
