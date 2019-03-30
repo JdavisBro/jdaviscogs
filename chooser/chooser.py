@@ -2,9 +2,9 @@ import discord
 from discord.ext import commands
 import json
 
-json="data/chooser/people.json"
-fileW=open(json, 'w')
-fileR=open(json, 'r')
+path="data/chooser/people.json"
+fileW=open(path, 'w')
+fileR=open(path, 'r')
 last=0
 data=json.loads(fileR)
 fileR.flush()
