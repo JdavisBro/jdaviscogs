@@ -5,8 +5,9 @@ import json
 path="data/chooser/people.json"
 fileW=open(path, 'w')
 fileR=open(path, 'r')
+filecontents=fileR.read()
 last=0
-data=json.load(fileR)
+data=json.loads(filecontents)
 fileR.flush()
 
 class chooser:
