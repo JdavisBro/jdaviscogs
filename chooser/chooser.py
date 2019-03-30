@@ -8,7 +8,7 @@ fileR=open(path, 'r')
 filecontents=fileR.read()
 fileR.close()
 last=0
-data=json.loads(filecontents)
+data=json.loads(filecontents.decode("utf-8"))
 
 class chooser:
     """Chooser!"""
