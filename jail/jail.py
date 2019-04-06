@@ -20,32 +20,31 @@ class jail:
             if "473868799536398356" in [y.id for y in ctx.message.author.roles]:
                 await self.bot.add_roles(person,role)
                 await self.bot.say("Okay! {} has been jailed!".format(person.name)
-                await self.bot.send_message(log,"{} has been jailed for {} minutes by {}".format(person.name,ctx.message.content.startswith,ctx.message.author.name))
+                await self.bot.send_message(log,content="{} has been jailed for {} minutes by {}".format(person.name,ctx.message.content.startswith,ctx.message.author.name))
                 timefor=int(ctx.message.content.startswith*60)
                 time.sleep(timefor)
                 await self.bot.remove_roles(person,role)
-                await self.bot.send_message(log,"{} has been freed from prison!".format(person.name))
+                await self.bot.send_message(log,content="{} has been freed from prison!".format(person.name))
             elif "517644591218950154" in [y.id for y in ctx.message.author.roles]:
                 if ctx.message.content.startswith <= 240:
                     await self.bot.add_roles(person,role)
                     await self.bot.say("Okay! {} has been jailed!".format(person.name))
-
-                    await self.bot.send_message(log,"{} has been jailed for {} minutes by {}".format(person.name,ctx.message.content.startswith,ctx.message.author.name))
+                    await self.bot.send_message(log,content="{} has been jailed for {} minutes by {}".format(person.name,ctx.message.content.startswith,ctx.message.author.name))
                     timefor=int(ctx.message.content.startswith*60)
                     time.sleep(timefor)
                     await self.bot.remove_roles(person,role)
-                    await self.bot.send_message(log,"{} has been freed from prison!".format(person.name))
+                    await self.bot.send_message(log,content="{} has been freed from prison!".format(person.name))
                 else:
                     await self.bot.say("Oi m9 ur a moderator that means you can excede 4 hours of jail givin m8")
             elif "513380418901377025" in [y.id for y in ctx.message.author.roles]:
                 if ctx.message.content.startswith <= 30:
                     await self.bot.add_roles(person,role)
                     await self.bot.say("Okay! {} has been jailed!".format(person.name))
-                    await self.bot.send_message(log,"{} has been jailed for {} minutes by {}".format(person.name,ctx.message.content.startswith,ctx.message.author.name))
+                    await self.bot.send_message(log,content="{} has been jailed for {} minutes by {}".format(person.name,ctx.message.content.startswith,ctx.message.author.name))
                     timefor=int(ctx.message.content.startswith*60)
                     time.sleep(timefor)
                     await self.bot.remove_roles(person,role)
-                    await self.bot.send_message(log,"{} has been freed from prison!".format(person.name))
+                    await self.bot.send_message(log,content="{} has been freed from prison!".format(person.name))
                 else:
                     await self.bot.say("Oi m9 ur a moderator that means you can excede 4 hours of jail givin m8")
 
