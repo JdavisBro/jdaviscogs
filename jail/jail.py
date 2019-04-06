@@ -19,10 +19,7 @@ class jail:
             role= get(server.roles, id="564190693287788544")
             if "473868799536398356" in [y.id for y in ctx.message.author.roles]:
                 await self.bot.add_roles(person,role)
-                try:
-                    await self.bot.say("Okay! {} has been jailed!".format(person.name)
-                except:
-                    pass
+                await self.bot.say("Okay! {} has been jailed!".format(person.name)
                 await self.bot.send_message(log,"{} has been jailed for {} minutes by {}".format(person.name,ctx.message.content.startswith,ctx.message.author.name))
                 timefor=int(ctx.message.content.startswith*60)
                 time.sleep(timefor)
@@ -31,10 +28,8 @@ class jail:
             elif "517644591218950154" in [y.id for y in ctx.message.author.roles]:
                 if ctx.message.content.startswith <= 240:
                     await self.bot.add_roles(person,role)
-                    try:
-                        await self.bot.say("Okay! {} has been jailed!".format(person.name))
-                    except:
-                        pass
+                    await self.bot.say("Okay! {} has been jailed!".format(person.name))
+
                     await self.bot.send_message(log,"{} has been jailed for {} minutes by {}".format(person.name,ctx.message.content.startswith,ctx.message.author.name))
                     timefor=int(ctx.message.content.startswith*60)
                     time.sleep(timefor)
@@ -45,10 +40,7 @@ class jail:
             elif "513380418901377025" in [y.id for y in ctx.message.author.roles]:
                 if ctx.message.content.startswith <= 30:
                     await self.bot.add_roles(person,role)
-                    try:
-                        await self.bot.say("Okay! {} has been jailed!".format(person.name))
-                    except:
-                        pass
+                    await self.bot.say("Okay! {} has been jailed!".format(person.name))
                     await self.bot.send_message(log,"{} has been jailed for {} minutes by {}".format(person.name,ctx.message.content.startswith,ctx.message.author.name))
                     timefor=int(ctx.message.content.startswith*60)
                     time.sleep(timefor)
