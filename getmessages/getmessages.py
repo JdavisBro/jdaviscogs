@@ -19,10 +19,10 @@ class getmessages:
         await self.bot.send_typing(ctx.message.channel)
         for channel in ctx.message.server.channels:
             logs = yield from self.bot.logs_from(channel)
-            for msg in logs:
-                if contains in msg.content:
+            for message in logs:
+                if contains in message.content:
                     server+=1
-                    if msg.author==ctx.message.author:
+                    if message.author==ctx.message.author:
                         person+=1
         if server==0:
             await self.bot.say("You have said {} {} times out of the server's {} times! That makes an error".format(contains,person,server))
