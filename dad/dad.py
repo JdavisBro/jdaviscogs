@@ -10,7 +10,7 @@ class dad:
         self.bot = bot
 
     @commands.command(pass_context=True,aliases=['Im', "I'm", "i'm"])
-    async def im(self,ctx,youneedhelpwithacommandthatiseasy):
+    async def im(self,ctx,*,youneedhelpwithacommandthatiseasy):
         """YOU NEED HELP WITH A COMMAND THAT IS EASY"""
         if ctx.message.channel.id=="493543036882649098":
             await self.bot.say("Hi {}, I'm Dad!".format(youneedhelpwithacommandthatiseasy))
