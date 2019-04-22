@@ -12,7 +12,10 @@ class dad:
     @commands.command(pass_context=True,aliases=['Im', "I'm", "i'm"])
     async def im(self,ctx,youneedhelpwithacommandthatiseasy):
         """YOU NEED HELP WITH A COMMAND THAT IS EASY"""
-        await self.bot.say("Hi {}, I'm Dad!".format(youneedhelpwithacommandthatiseasy))
+        if ctx.message.channel.id=="493543036882649098":
+            await self.bot.say("Hi {}, I'm Dad!".format(youneedhelpwithacommandthatiseasy))
+        else:
+            await self.bot.add_reaction(ctx.message,❎)
 
 def setup(bot):
     bot.add_cog(dad(bot))
