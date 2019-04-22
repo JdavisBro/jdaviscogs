@@ -15,7 +15,7 @@ class dad:
         if ctx.message.channel.id=="493543036882649098":
             await self.bot.say("Hi {}, I'm Dad!".format(youneedhelpwithacommandthatiseasy))
         else:
-            await self.bot.add_reaction(ctx.message,❎)
+            await self.bot.add_reaction(ctx.message,"❎")
 
 def setup(bot):
     bot.add_cog(dad(bot))
