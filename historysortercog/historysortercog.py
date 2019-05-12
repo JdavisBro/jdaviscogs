@@ -31,6 +31,7 @@ class Events:
         self.bot = bot
 
     async def on_message(self,message):
+        print("i see a message")
         if message.server.id=="506407988794490880":
             if message.channel.id=="548798868070858752":
                 if message.content!="-sort":
