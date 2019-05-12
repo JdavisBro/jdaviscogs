@@ -24,7 +24,8 @@ class historysortercog:
                 await self.bot.send_message(logschannel,embed=embed)
                 await self.bot.send_message(ctx.message.author,"You have been sorted into {}".format(civname))
                 await self.bot.delete_message(ctx.message)
-                
+             
+    @asyncio.coroutine
     async def on_message(self,message):
         if message.server.id=="506407988794490880":
             if message.channel.id=="548798868070858752":
