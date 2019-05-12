@@ -11,10 +11,8 @@ class historysortercog:
     @commands.command(pass_context=True)
     async def sort(self,ctx):
         """Sorts you into a civ!"""
-        historywars=self.bot.get_server("506407988794490880")
-        if ctx.message.server==historywars:
-            sortingchannel=discord.utils.get(ctx.message.server.channels, name="sorting-hall")
-            if ctx.message.channel==sortingchannel:
+        if ctx.message.server.id=="506407988794490880":
+            if ctx.message.channel.id=="548798868070858752":
                 civs=["Egyptians","Vikings","Greeks","Samurai","Romans","Persians"]
                 civname=random.choice(civs)
                 civrole = discord.utils.get(ctx.message.server.roles, name=civname)
@@ -26,6 +24,12 @@ class historysortercog:
                 await self.bot.send_message(logschannel,embed=embed)
                 await self.bot.send_message(ctx.message.author,"You have been sorted into {}".format(civname))
                 await self.bot.delete_message(ctx.message)
+                
+    async def on_message(self,message):
+        if message.server.id=="506407988794490880":
+            if message.channel.id=="548798868070858752":
+                if message.content!="-sort":
+                    await client.delete_message(message)
 
 def setup(bot):
     bot.add_cog(historysortercog(bot))
