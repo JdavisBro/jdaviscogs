@@ -11,7 +11,7 @@ class historysortercog:
     @commands.command(pass_context=True)
     async def sort(self,ctx):
         """Sorts you into a civ!"""
-        historywars=discord.utils.get(client.servers,name="History Wars")
+        historywars=discord.utils.get(self.bot.servers,name="History Wars")
         if ctx.message.server==historywars:
             sortingchannel=discord.utils.get(ctx.message.server.channels, name="sorting-hall")
             if ctx.message.channel==sortingchannel:
