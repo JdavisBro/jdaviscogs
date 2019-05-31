@@ -9,7 +9,7 @@ except:
     pass
 try:
     open(f,"x")
-    json.dump("{}",open(f,"w"),sort_keys=True, indent=4)
+    open(f,"w").write("{}")
     fileW=open(f, 'w')
     fileR=open(f, 'r')
 except:
