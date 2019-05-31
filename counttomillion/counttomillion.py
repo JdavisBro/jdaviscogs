@@ -2,8 +2,7 @@ import discord
 from discord.ext import commands
 import json, os
 dirname="data/counttomillion"
-filename="count.json"
-f=dirname+filename
+f="data/counttomillion/count.json"
 try:
     os.mkdir(dirname)
 except:
