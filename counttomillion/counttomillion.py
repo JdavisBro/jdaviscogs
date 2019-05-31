@@ -3,6 +3,7 @@ from discord.ext import commands
 import json
 f="data/counttomillion/count.json"
 try:
+    os.mkdir(data/counttomillion)
     open(f,"x")
     open(f,"w").write("{}")
     fileW=open(f, 'w')
