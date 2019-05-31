@@ -1,9 +1,11 @@
 import discord
 from discord.ext import commands
 import json, os
-f="data/counttomillion/count.json"
+dirname="data/counttomillion"
+filename="count.json"
+f=dirname+filename
 try:
-    os.mkdir(data/counttomillion)
+    os.mkdir(dirname)
     open(f,"x")
     open(f,"w").write("{}")
     fileW=open(f, 'w')
