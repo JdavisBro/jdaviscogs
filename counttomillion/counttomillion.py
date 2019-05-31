@@ -2,13 +2,13 @@ import discord
 from discord.ext import commands
 import json
 json="data/counttomillion/count.json"
-fileW=open(json, 'w')
-fileR=open(json, 'r')
 try:
     open(json,"x")
-    fileW.write("{}")
+    open(json,"w").write("{}")
 except:
     pass
+fileW=open(json, 'w')
+fileR=open(json, 'r')
 
 class counttomillion:
     """counttomillion!"""
