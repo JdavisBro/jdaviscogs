@@ -9,7 +9,7 @@ except:
     pass
 try:
     open(f,"x")
-    open(f,"w").write("{}")
+    json.dump("{}",open(f,"w"),sort_keys=True, indent=4)
     fileW=open(f, 'w')
     fileR=open(f, 'r')
 except:
@@ -32,7 +32,7 @@ class counttomillion:
                 await self.bot.say("Ok, count to 1 million started! I'll begin!")
                 data[ctx.message.channel.id]=1
                 await self.bot.edit_channel(ctx.message.channel,topic="Next number: 1")
-                json.dump(data, fileW, sort_keys=True, indent=4)                
+                json.dump(data, fileW, sort_keys=True, indent=4)
             else:
                 await self.bot.say("A count is already running in this channel!")
 
