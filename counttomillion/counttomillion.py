@@ -9,10 +9,10 @@ except:
     pass
 try:
     open(f,"x")
-    open(f,"w").write("{}")
-    fi=open(f, 'w+')
+    open(f,"w").write("{'d':'d'}")
+    fi=open(f, 'r+')
 except:
-    fi=open(f, 'w+')
+    fi=open(f, 'r+')
 
 class counttomillion:
     """counttomillion!"""
@@ -24,8 +24,8 @@ class counttomillion:
     async def count(self,ctx):
         """Start the count!"""
         data = eval(fi.read())
-        if message.channel.id not in data:
-            data[message.channel.id] = 0
+        if ctx.message.channel.id not in data:
+            data[ctx.message.channel.id] = 0
         if ctx.message.author.server_permissions.manage_server:
             if data[ctx.message.channel.id]==0:
                 await self.bot.say("Ok, count to 1 million started! Say 1 to begin!")
@@ -38,8 +38,8 @@ class counttomillion:
     @commands.command(pass_context=True)
     async def stopcount(self,ctx):
         data = eval(fi.read())
-        if message.channel.id not in data:
-            data[message.channel.id] = 0
+        if ctx.message.channel.id not in data:
+            data[ctx.message.channel.id] = 0
         if ctx.message.author.server_permissions.manage_server:
             if data[ctx.message.channel.id]==0:
                 await self.bot.say("This channel isn't even counting!")
