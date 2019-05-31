@@ -1,14 +1,14 @@
 import discord
 from discord.ext import commands
 import json
-json="data/counttomillion/count.json"
+f="data/counttomillion/count.json"
 try:
-    open(json,"x")
-    open(json,"w").write("{}")
+    open(f,"x")
+    open(f,"w").write("{}")
 except:
     pass
-fileW=open(json, 'w')
-fileR=open(json, 'r')
+fileW=open(f, 'w')
+fileR=open(f, 'r')
 
 class counttomillion:
     """counttomillion!"""
@@ -41,7 +41,7 @@ class counttomillion:
                 json.dump(data, fileW, sort_keys=True, indent=4)
                 await self.bot.edit_channel(ctx.message.channel,topic="")
 
-    async def on_message(message):
+    async def on_message(self,message):
         data=json.load(fileR)
         if data[message.channel.id] != 0:
             try:
@@ -57,7 +57,7 @@ class counttomillion:
                 if data[message.channel.id]==1000000:
                     await self.bot.say("We have reached a million! Resetting, say 1 to start.")
                     data[message.channel.id]=1
-                await self.bot.edit_channel(ctx.message.channel,topic="Next number: {}".format(data[message.channel.id]))
+                await self.bot.edit_channel(message.channel,topic="Next number: {}".format(data[message.channel.id]))
                 json.dump(data, fileW, sort_keys=True, indent=4)
             else:
                 try:
