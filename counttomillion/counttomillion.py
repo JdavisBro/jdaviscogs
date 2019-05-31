@@ -43,7 +43,7 @@ class counttomillion:
 
     async def on_message(message):
         data=json.load(fileR)
-        if data[message.channel.id] != 0
+        if data[message.channel.id] != 0:
             try:
                 content=int(message.content)
             except:
