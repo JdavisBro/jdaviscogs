@@ -1,6 +1,6 @@
 import discord
 from discord.ext import commands
-import json
+import json, os
 f="data/counttomillion/count.json"
 try:
     os.mkdir(data/counttomillion)
