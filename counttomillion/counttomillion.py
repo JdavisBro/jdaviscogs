@@ -5,10 +5,12 @@ f="data/counttomillion/count.json"
 try:
     open(f,"x")
     open(f,"w").write("{}")
+    fileW=open(f, 'w')
+    fileR=open(f, 'r')
 except:
-    pass
-fileW=open(f, 'w')
-fileR=open(f, 'r')
+    fileW=open(f, 'w')
+    fileR=open(f, 'r')
+
 
 class counttomillion:
     """counttomillion!"""
