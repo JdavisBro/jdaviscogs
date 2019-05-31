@@ -30,13 +30,13 @@ class counttomillion:
         except:
             data = {}
             data[ctx.message.channel.id] = 0
-            json.dump(data, fileW, sort_keys=True, indent=4)
+            json.dump(data, fileW)
         if ctx.message.author.server_permissions.manage_server:
             if data[ctx.message.channel.id]==0:
-                await self.bot.say("Ok, count to 1 million started! I'll begin!")
+                await self.bot.say("Ok, count to 1 million started! Say 1 to begin!")
                 data[ctx.message.channel.id]=1
                 await self.bot.edit_channel(ctx.message.channel,topic="Next number: 1")
-                json.dump(data, fileW, sort_keys=True, indent=4)
+                json.dump(data, fileW)
             else:
                 await self.bot.say("A count is already running in this channel!")
 
@@ -49,7 +49,7 @@ class counttomillion:
             else:
                 await self.bot.say("Ok, stopped! We got to {} before stopping!".format(data[ctx.message.channel.id]))
                 data[ctx.message.channel.id]=0
-                json.dump(data, fileW, sort_keys=True, indent=4)
+                json.dump(data, fileW)
                 await self.bot.edit_channel(ctx.message.channel,topic="")
 
     async def on_message(self,message):
@@ -58,7 +58,7 @@ class counttomillion:
         except:
             data = {}
             data[message.channel.id] = 0
-            json.dump(data, fileW, sort_keys=True, indent=4)
+            json.dump(data, fileW)
         if data[message.channel.id] != 0:
             try:
                 content=int(message.content)
@@ -71,10 +71,10 @@ class counttomillion:
             if content==data[message.channel.id]:
                 data[message.channel.id]+=1
                 if data[message.channel.id]==1000000:
-                    await self.bot.say("We have reached a million! Resetting, say 1 to start.")
+                    await self.bot.say("We have reached a million! Resetting, say 1 to restart.")
                     data[message.channel.id]=1
                 await self.bot.edit_channel(message.channel,topic="Next number: {}".format(data[message.channel.id]))
-                json.dump(data, fileW, sort_keys=True, indent=4)
+                json.dump(data, fileW)
             else:
                 try:
                     await self.bot.delete_message(message)
