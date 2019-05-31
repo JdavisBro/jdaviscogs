@@ -6,6 +6,9 @@ filename="count.json"
 f=dirname+filename
 try:
     os.mkdir(dirname)
+except:
+    pass
+try:
     open(f,"x")
     open(f,"w").write("{}")
     fileW=open(f, 'w')
