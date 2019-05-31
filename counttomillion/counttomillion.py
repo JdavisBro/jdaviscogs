@@ -9,7 +9,6 @@ except:
     pass
 try:
     open(f,"x")
-    open(f,"w").write("{}")
     fileW=open(f, 'w')
     fileR=open(f, 'r')
 except:
@@ -26,7 +25,12 @@ class counttomillion:
     @commands.command(pass_context=True)
     async def count(self,ctx):
         """Start the count!"""
-        data=json.load(fileR)
+        try:
+            data=json.load(fileR)
+        except:
+            data = {}
+            data[ctx.channel.id] = 0
+            json.dump(data, fileW, sort_keys=True, indent=4)
         if ctx.message.author.server_permissions.manage_server:
             if data[ctx.message.channel.id]==0:
                 await self.bot.say("Ok, count to 1 million started! I'll begin!")
@@ -49,7 +53,12 @@ class counttomillion:
                 await self.bot.edit_channel(ctx.message.channel,topic="")
 
     async def on_message(self,message):
-        data=json.load(fileR)
+        try:
+            data=json.load(fileR)
+        except:
+            data = {}
+            data[message.channel.id] = 0
+            json.dump(data, fileW, sort_keys=True, indent=4)
         if data[message.channel.id] != 0:
             try:
                 content=int(message.content)
