@@ -29,7 +29,7 @@ class counttomillion:
             data=json.load(fileR)
         except:
             data = {}
-            data[ctx.channel.id] = 0
+            data[ctx.message.channel.id] = 0
             json.dump(data, fileW, sort_keys=True, indent=4)
         if ctx.message.author.server_permissions.manage_server:
             if data[ctx.message.channel.id]==0:
